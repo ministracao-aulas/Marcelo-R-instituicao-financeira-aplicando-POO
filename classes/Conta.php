@@ -23,18 +23,19 @@ abstract class Conta implements InstituicaoFinanceira {
 
     public function depositar($quantia) {
         $this->saldo += $quantia;
+        return "Depósito efetuado de {$quantia}";
     }
 
     // Polimorfismo
     public function sacar($quantia) {
         if ($quantia <= $this->saldo) {
             $this->saldo -= $quantia;
-            return true;
+            return "Saque efetuado de {$quantia}";
         } elseif ($quantia <= $this->saldo + $this->limiteDeCredito) {
             $this->saldo -= $quantia;
-            return true;
+            return "Saque efetuado de {$quantia}";
         } else {
-            return false;
+            return "Saldo insuficiente";
         }
     }
 }

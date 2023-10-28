@@ -13,5 +13,6 @@ class ContaCorrente extends Conta {
 
     public function aplicarTaxaDeManutencao() {
         $this->saldo -= $this->taxaDeManutencao;
+        return "Aplicada a taxa de manutenção de {$this->taxaDeManutencao}";
     }
 }

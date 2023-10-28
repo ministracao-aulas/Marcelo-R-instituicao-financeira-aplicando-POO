@@ -9,9 +9,9 @@ $dados = [
 ];
 
 $conta = new ContaCorrente($dados['saldo'], $dados['limiteDeCredito'], $dados['taxaDeManutencao']);
-$conta->depositar(200);
-echo "Saldo: " . $conta->getSaldo() . PHP_EOL;
-$conta->sacar(700);
-echo "Saldo: " . $conta->getSaldo() . PHP_EOL;
-$conta->aplicarTaxaDeManutencao();
+echo $conta->depositar(200) . " | ";
+echo "Saldo: " . $conta->getSaldo() . " | ";
+echo $conta->sacar(3000) . " | ";
+echo "Saldo: " . $conta->getSaldo() . " | ";
+echo $conta->aplicarTaxaDeManutencao() . " | ";
 echo "Saldo: " . $conta->getSaldo() . PHP_EOL;
