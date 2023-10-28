@@ -1,17 +1,27 @@
 <?php
 
-require_once 'classes/ContaCorrente.php';
+require_once __DIR__ . '/classes/ContaCorrente.php';
 
 $dados = [
     'saldo' => 3000,
     'limiteDeCredito' => 500,
-    'taxaDeManutencao' => 20
+    'taxaDeManutencao' => 20,
 ];
 
-$conta = new ContaCorrente($dados['saldo'], $dados['limiteDeCredito'], $dados['taxaDeManutencao']);
-echo $conta->depositar(200) . " | ";
-echo $conta->getSaldo() . " | ";
-echo $conta->sacar(3000) . " | ";
-echo $conta->getSaldo() . " | ";
-echo $conta->aplicarTaxaDeManutencao() . " | ";
-echo $conta->getSaldo() . PHP_EOL;
+$conta = new ContaCorrente(
+    $dados['saldo'],
+    $dados['limiteDeCredito'],
+    $dados['taxaDeManutencao'],
+);
+
+echo implode(
+    PHP_EOL,
+    [
+        $conta->depositar(200),
+        $conta->getSaldo(),
+        $conta->sacar(3000),
+        $conta->getSaldo(),
+        $conta->aplicarTaxaDeManutencao(),
+        $conta->getSaldo(),
+    ]
+) . PHP_EOL;
