@@ -1,6 +1,6 @@
 <?php
 
-require_once 'classes/ContaCorrente.php';
+require_once __DIR__ . '/classes/ContaCorrente.php';
 
 $dados = [
     'saldo' => 3000,

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'InstituicaoFinanceira.php';
+require_once __DIR__ . '/InstituicaoFinanceira.php';
 
 // Abstração
 abstract class Conta implements InstituicaoFinanceira {
