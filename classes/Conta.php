@@ -14,7 +14,7 @@ abstract class Conta implements InstituicaoFinanceira {
 
     // Encapsulamento
     public function getSaldo() {
-        return $this->saldo;
+        return "Saldo Atualizado: " . $this->saldo;
     }
 
     public function getLimiteDeCredito() {
